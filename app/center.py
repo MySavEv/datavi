@@ -14,7 +14,7 @@ import seaborn as sns
 matplotlib.font_manager.fontManager.addfont('Sarabun-Regular.ttf')
 matplotlib.rc('font', family='Sarabun')
 
-df = pd.read_csv("https://raw.githubusercontent.com/MySavEv/datavi/master/datasetEducation.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/MySavEv/datavi/master/datasetEducation.csv",encoding='UTF-8')
 new_columns = {
     "คุณยินยอมให้ใช้ข้อมูลส่วนตัวและข้อมูลด้านการศึกษาของคุณ เพื่อใช้ในการศึกษาและนำไปพัฒนา":"ความยินยอม",
     "สาขา ( กรอกด้วยชื่อเต็มของสาขา ,หากไม่มีกรอก ' - ')":"สาขา",
@@ -82,7 +82,6 @@ def kana_tor_grade(kana):
     # สร้าง figure และ axes
     fig, ax = plt.subplots(figsize=(5, 5))
 
-    
     # สร้างกราฟ
     sns.barplot(ax=ax, y='คณะ', x='จำนวน', hue='ผลการเรียนในรายวิชาที่พึงพอใจ', data=df_sug1[df_sug1['คณะ'] == kana], palette='pastel')
 
